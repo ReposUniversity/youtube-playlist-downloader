@@ -6,7 +6,7 @@ const { exec } = require('child_process');
 function convertWebMtoMP3(inputFile, outputFile) {
     return new Promise((resolve, reject) => {
         // ffmpeg -i test.webm  -vn -ab 128k -ar 44100 -y "test.mp3";
-        const command = `ffmpeg -i "${inputFile}" -vn -ab 128k -ar 44100 -y "${outputFile}"`;
+        const command = `ffmpeg -i "${inputFile}" -map a -vn -ab 96k -ar 44100 -y "${outputFile}"`;
         console.log('Conversion command:', command);
         exec(command, (error, stdout, stderr) => {
             if (error) {
