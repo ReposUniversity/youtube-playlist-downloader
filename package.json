@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@ffmpeg/ffmpeg": "^0.12.10",
+    "puppeteer": "^21.0.1",
+    "ytdl-core": "^4.11.5"
+  }
+}
