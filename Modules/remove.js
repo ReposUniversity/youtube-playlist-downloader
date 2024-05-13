@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Function to remove all .webm files from a directory
-function removeFiles(directory) {
+function removeWebMFiles(directory) {
     return new Promise((resolve, reject) => {
         fs.readdir(directory, (err, files) => {
             if (err) {
@@ -42,4 +42,4 @@ function removeFiles(directory) {
     });
 }
 
-module.exports = { removeFiles };
+module.exports = { removeWebMFiles };

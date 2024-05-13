@@ -99,11 +99,11 @@ const download = async (songURL) => {
   // Get video info
   try {
     info = await ytdl.getInfo(songURL);
-    //console.log('info', info)
+    // console.log('info', info)
   } catch { }
 
   // Save info to json file
-  fs.writeFileSync('./info.json', JSON.stringify(info, null, 2));
+  fs.writeFileSync('./Files/info.json', JSON.stringify(info, null, 2));
 
   // Get all available formats
   let formatsAvailable = info.formats.map(format => format.container);
@@ -134,12 +134,12 @@ const download = async (songURL) => {
   }
 
   // Download audio
-  ytdl(songURL, {filter: 'audio'})
+  ytdl(songURL, { filter: 'audioonly' })
     .pipe(fs.createWriteStream(`downloads/audio/${videoTitle}.${audioFormat}`));
   
   // Download video
-  ytdl(songURL)
-    .pipe(fs.createWriteStream(`downloads/videos/${videoTitle}.${videoFormat}`));
+  // ytdl(songURL)
+  //   .pipe(fs.createWriteStream(`downloads/videos/${videoTitle}.${videoFormat}`));
 }
 
 const downloadPlaylist = async (playlistURL) => {
@@ -166,7 +166,7 @@ const downloadPlaylist = async (playlistURL) => {
   }
 
   // Save extracted items to json file 
-  fs.writeFileSync('./items.json', JSON.stringify(items, null, 2));
+  fs.writeFileSync('./Files/items.json', JSON.stringify(items, null, 2));
 
   // Pause to see what's going on.
   await new Promise(r => setTimeout(r, 10000));
@@ -175,4 +175,4 @@ const downloadPlaylist = async (playlistURL) => {
   await browser.close();
 }
 
-module.exports = { downloadPlaylist };
+module.exports = { downloadPlaylist, download };
