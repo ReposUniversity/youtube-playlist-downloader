@@ -134,12 +134,39 @@ const download = async (songURL) => {
   }
 
   // Download audio
-  ytdl(songURL, { filter: 'audioonly' })
-    .pipe(fs.createWriteStream(`downloads/audio/${videoTitle}.${audioFormat}`));
+  const downloadAudio = async (songURL, videoTitle, audioFormat) => {
+    const audioStream = ytdl(songURL, { filter: 'audioonly' });
+    const audioFilePath = `downloads/audio/${videoTitle}.${audioFormat}`;
+    const writeStream = fs.createWriteStream(audioFilePath);
+    return new Promise((resolve, reject) => {
+      audioStream.pipe(writeStream);
+      audioStream.on('end', () => {
+        resolve(audioFilePath);
+      });
+      audioStream.on('error', (error) => {
+        reject(error);
+      });
+    });
+  };
+
+  await downloadAudio(songURL, videoTitle, audioFormat);
   
   // Download video
-  // ytdl(songURL)
-  //   .pipe(fs.createWriteStream(`downloads/videos/${videoTitle}.${videoFormat}`));
+  // const downloadVideo = async (songURL, videoTitle, videoFormat) => {
+  //   const videoStream = ytdl(songURL);
+  //   const videoFilePath = `downloads/videos/${videoTitle}.${videoFormat}`;
+  //   const writeStream = fs.createWriteStream(videoFilePath);
+  //   return new Promise((resolve, reject) => {
+  //     videoStream.pipe(writeStream);
+  //     videoStream.on('end', () => {
+  //       resolve(videoFilePath);
+  //     });
+  //     videoStream.on('error', (error) => {
+  //       reject(error);
+  //     });
+  //   });
+  // };
+  // await downloadVideo(songURL, videoTitle, videoFormat);
 }
 
 const downloadPlaylist = async (playlistURL) => {

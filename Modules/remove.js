@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
-// Function to remove all .webm files from a directory
-function removeWebMFiles(directory) {
+// Function to remove all .webm and .mp4 files from a directory
+function removeNotMp3Files(directory) {
     return new Promise((resolve, reject) => {
         fs.readdir(directory, (err, files) => {
             if (err) {
@@ -13,7 +13,7 @@ function removeWebMFiles(directory) {
 
             const deletionPromises = [];
             files.forEach((file) => {
-                if (file.endsWith('.webm')) {
+                if (file.endsWith('.webm') || file.endsWith('.mp4')) {
                     const filePath = path.join(directory, file);
                     deletionPromises.push(new Promise((resolveFile, rejectFile) => {
                         fs.unlink(filePath, (err) => {
@@ -42,4 +42,4 @@ function removeWebMFiles(directory) {
     });
 }
 
-module.exports = { removeWebMFiles };
+module.exports = { removeNotMp3Files };

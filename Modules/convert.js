@@ -3,7 +3,7 @@ const path = require('path');
 const { exec } = require('child_process');
 
 // Function to convert WebM to MP3
-function convertWebMtoMP3(inputFile, outputFile) {
+function convertToMP3(inputFile, outputFile) {
     return new Promise((resolve, reject) => {
         // ffmpeg -i test.webm  -vn -ab 128k -ar 44100 -y "test.mp3";
         const command = `ffmpeg -i "${inputFile}" -map a -vn -ab 96k -ar 44100 -y "${outputFile}"`;
@@ -21,13 +21,13 @@ function convertWebMtoMP3(inputFile, outputFile) {
 }
 
 // Function to get list of all .webm files in a directory
-function getWebMFilesInDirectory(directoryPath) {
+function getFilesInDirectory(directoryPath) {
     return new Promise((resolve, reject) => {
         fs.readdir(directoryPath, (err, files) => {
             if (err) {
                 reject(err);
             } else {
-                const webmFiles = files.filter(file => path.extname(file).toLowerCase() === '.webm');
+                const webmFiles = files.filter(file => path.extname(file).toLowerCase() === '.webm' || path.extname(file).toLowerCase() === '.mp4');
                 resolve(webmFiles);
             }
         });
@@ -35,14 +35,20 @@ function getWebMFilesInDirectory(directoryPath) {
 }
 
 // Main function to convert all .webm files in a directory
-async function convertAllWebMToMP3(directoryPath) {
+async function convertAllToMP3(directoryPath) {
     try {
-        const webmFiles = await getWebMFilesInDirectory(directoryPath);
+        const webmFiles = await getFilesInDirectory(directoryPath);
         const conversionPromises = webmFiles.map(async file => {
             const inputFilePath = path.join(directoryPath, file);
-            const outputFilePath = path.join(directoryPath, path.basename(file, '.webm') + '.mp3');
+            var outputFilePath
+            if (path.extname(file).toLowerCase() === '.webm') {
+                outputFilePath = path.join(directoryPath, path.basename(file, '.webm') + '.mp3');
+            }
+            if (path.extname(file).toLowerCase() === '.mp4') {
+                outputFilePath = path.join(directoryPath, path.basename(file, '.mp4') + '.mp3');
+            }
             try {
-                await convertWebMtoMP3(inputFilePath, outputFilePath);
+                await convertToMP3(inputFilePath, outputFilePath);
                 console.log(`Conversion of ${inputFilePath} finished`);
             } catch (error) {
                 console.error(`Conversion of ${inputFilePath} failed:`, error);
@@ -55,4 +61,4 @@ async function convertAllWebMToMP3(directoryPath) {
     }
 }
 
-module.exports = { convertAllWebMToMP3 };
+module.exports = { convertAllToMP3 };

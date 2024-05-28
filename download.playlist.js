@@ -2,13 +2,13 @@ const Downloader = require("./Modules/download.js");
 const Convert = require("./Modules/convert.js");
 const Remove = require("./Modules/remove.js");
 
-const playlist = "https://www.youtube.com/playlist?list=PLmmYSbUCWJ4x1GO839azG_BBw8rkh-zOj";
+const playlist = "https://www.youtube.com/playlist?list=PLrhzvIcii6GNjpARdnO4ueTUAVR9eMBpc";
 const directoryPath = 'downloads/audio';
 
 async function run() {
     await Downloader.downloadPlaylist(playlist);
-    await Convert.convertAllWebMToMP3(directoryPath);
-    await Remove.removeFiles(directoryPath);
+    await Convert.convertAllToMP3(directoryPath);
+    await Remove.removeNotMp3Files(directoryPath);
     console.log("All done!");
 }
 

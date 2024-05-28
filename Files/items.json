@@ -1,32 +1,92 @@
 [
   {
-    "title": "Clean Code - Uncle Bob / Lesson 1",
-    "url": "https://www.youtube.com/watch?v=7EmboKQH8lM",
-    "channel": "UnityCoin"
+    "title": "Strategy Pattern – Design Patterns (ep 1)",
+    "url": "https://www.youtube.com/watch?v=v9ejT8FO-7I",
+    "channel": "Christopher Okhravi"
   },
   {
-    "title": "Clean Code - Uncle Bob / Lesson 2",
-    "url": "https://www.youtube.com/watch?v=2a_ytyt9sf8",
-    "channel": "UnityCoin"
+    "title": "Observer Pattern – Design Patterns (ep 2)",
+    "url": "https://www.youtube.com/watch?v=_BpmfnqjgzQ",
+    "channel": "Christopher Okhravi"
   },
   {
-    "title": "Clean Code - Uncle Bob / Lesson 3",
-    "url": "https://www.youtube.com/watch?v=Qjywrq2gM8o",
-    "channel": "UnityCoin"
+    "title": "Decorator Pattern – Design Patterns (ep 3)",
+    "url": "https://www.youtube.com/watch?v=GCraGHx6gso",
+    "channel": "Christopher Okhravi"
   },
   {
-    "title": "Clean Code - Uncle Bob / Lesson 4",
-    "url": "https://www.youtube.com/watch?v=58jGpV2Cg50",
-    "channel": "UnityCoin"
+    "title": "Factory Method Pattern – Design Patterns (ep 4)",
+    "url": "https://www.youtube.com/watch?v=EcFVTgRHJLM",
+    "channel": "Christopher Okhravi"
   },
   {
-    "title": "Clean Code - Uncle Bob / Lesson 5",
-    "url": "https://www.youtube.com/watch?v=sn0aFEMVTpA",
-    "channel": "UnityCoin"
+    "title": "Abstract Factory Pattern – Design Patterns (ep 5)",
+    "url": "https://www.youtube.com/watch?v=v-GiuMmsXj4",
+    "channel": "Christopher Okhravi"
   },
   {
-    "title": "Clean Code - Uncle Bob / Lesson 6",
-    "url": "https://www.youtube.com/watch?v=l-gF0vDhJVI",
-    "channel": "UnityCoin"
+    "title": "Singleton Pattern – Design Patterns (ep 6)",
+    "url": "https://www.youtube.com/watch?v=hUE_j6q0LTQ",
+    "channel": "Christopher Okhravi"
+  },
+  {
+    "title": "Command Pattern – Design Patterns (ep 7)",
+    "url": "https://www.youtube.com/watch?v=9qA5kw8dcSU",
+    "channel": "Christopher Okhravi"
+  },
+  {
+    "title": "Adapter Pattern – Design Patterns (ep 8)",
+    "url": "https://www.youtube.com/watch?v=2PKQtcJjYvc",
+    "channel": "Christopher Okhravi"
+  },
+  {
+    "title": "Facade Pattern – Design Patterns (ep 9)",
+    "url": "https://www.youtube.com/watch?v=K4FkHVO5iac",
+    "channel": "Christopher Okhravi"
+  },
+  {
+    "title": "Proxy Pattern – Design Patterns (ep 10)",
+    "url": "https://www.youtube.com/watch?v=NwaabHqPHeM",
+    "channel": "Christopher Okhravi"
+  },
+  {
+    "title": "Bridge Pattern – Design Patterns (ep 11)",
+    "url": "https://www.youtube.com/watch?v=F1YQ7YRjttI",
+    "channel": "Christopher Okhravi"
+  },
+  {
+    "title": "Structural Patterns (comparison) – Design Patterns (ep 12)",
+    "url": "https://www.youtube.com/watch?v=lPsSL6_7NBg",
+    "channel": "Christopher Okhravi"
+  },
+  {
+    "title": "Template Method Pattern – Design Patterns (ep 13)",
+    "url": "https://www.youtube.com/watch?v=7ocpwK9uesw",
+    "channel": "Christopher Okhravi"
+  },
+  {
+    "title": "Composite Pattern – Design Patterns (ep 14)",
+    "url": "https://www.youtube.com/watch?v=EWDmWbJ4wRA",
+    "channel": "Christopher Okhravi"
+  },
+  {
+    "title": "Difference Between Composite and Decorator Pattern – Design Patterns (ep 15)",
+    "url": "https://www.youtube.com/watch?v=EECfgFQ44Kg",
+    "channel": "Christopher Okhravi"
+  },
+  {
+    "title": "Iterator Pattern – Design Patterns (ep 16)",
+    "url": "https://www.youtube.com/watch?v=uNTNEfwYXhI",
+    "channel": "Christopher Okhravi"
+  },
+  {
+    "title": "State Pattern – Design Patterns (ep 17)",
+    "url": "https://www.youtube.com/watch?v=N12L5D78MAA",
+    "channel": "Christopher Okhravi"
+  },
+  {
+    "title": "Null Object Pattern – Design Patterns (ep 18)",
+    "url": "https://www.youtube.com/watch?v=rQ7BzfRz7OY",
+    "channel": "Christopher Okhravi"
   }
 ]
